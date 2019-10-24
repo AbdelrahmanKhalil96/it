@@ -1,0 +1,43 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+<head>
+		<script>
+		function required()
+		{
+		var empt = document.forms["form1"]["name"].value;
+		if (empt == "")
+		{
+		alert("Please input a Value");
+		return false;
+		}
+		else 
+		return true; 
+		}
+		</script>
+</head>
+	<div class="row divider green">
+		<div class="col-md-12"></div>
+	</div>
+	<div class="row banner menu">
+		<div class="col-md-11 col-md-offset-1 padding-none">
+			<h1>New Item</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6 col-md-offset-1 padding-top">
+			<form action="#" name="form1" method = "post" onsubmit="return required()">
+				<div class="form-group">
+
+					<label for="name">Name:</label>
+					<input type ="text" maxlength="50" id="name" class="form-control" name="name"placeholder="Name of the Item"  >
+
+					<label for="description">Description:</label>
+					<textarea class="form-control" maxlength="250" rows="3" name="description" placeholder="Description of the Item"></textarea>
+					<button type="submit" class="btn btn-default" id="submit" type="submit">
+					<span class="glyphicon glyphicon-glass" aria-hidden="true"></span>Create</button>
+				</div>
+			</form>
+		</div>
+	</div>
+{% endblock %}
